@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react";
-
-type ReturnType<T> = [
-  T | undefined,
-  React.Dispatch<React.SetStateAction<T | undefined>>
-];
+import { RetStateType } from "./type";
 
 /**
- * * use T extends {} also worked in arrow func na kub :3
+ * * use <T extends {}> also worked in arrow func na kub :3
  */
 
 export const useLocalStorage = <T>( // *here
   key: string,
   initialValue?: T
-): ReturnType<T> => {
+): RetStateType<T> => {
   const [state, setState] = useState<T | undefined>(() => {
     if (!initialValue) return;
     try {
