@@ -7,8 +7,8 @@ const App: FC<{}> = () => {
   return (
     <div className="App">
       <h1>Value: {localStorage} </h1>
-      <button onClick={() => setLocalStorage(Math.random() * 10)}>
-        Change State
+      <button onClick={() => setLocalStorage(Math.random() * 100)}>
+        Change LocalStorage Value
       </button>
     </div>
   );
